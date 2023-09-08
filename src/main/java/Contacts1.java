@@ -44,7 +44,7 @@ public class Contacts1 {
     private static final String MESSAGE_PERSONS_FOUND_OVERVIEW = "%1$d persons found!";
     private static final String MESSAGE_WELCOME = "Welcome to Contacts!";
 
-    // These are the prefix strings to define the data type of a command parameter
+    // These are the prefix strings to define the data type of a command parameterN
     private static final String PERSON_DATA_PREFIX_PHONE = "p/";
     private static final String PERSON_DATA_PREFIX_EMAIL = "e/";
 
