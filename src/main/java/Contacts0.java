@@ -3,14 +3,13 @@ import java.util.Scanner;
 
 public class Contacts0 {
 
+    public static final int MAX_ENTRIES = 100;
+    public static final int NUM_PARTS = 3;
+
     public static void main(String[] args) {
         final Scanner SCANNER = new Scanner(System.in);
-        System.out.println("|| ===================================================");
-        System.out.println("|| ===================================================");
-        System.out.println("|| Contacts - Version 0.0");
-        System.out.println("|| Welcome to Contacts!");
-        System.out.println("|| ===================================================");
-        String[][] list = new String[100][3];
+        showWelcomeScreen();
+        String[][] list = new String[MAX_ENTRIES][NUM_PARTS];
         int count = 0;
         while (true) {
             System.out.print("|| " + "Enter command: ");
@@ -21,7 +20,7 @@ public class Contacts0 {
             String userCommand = inputLine;
             System.out.println("|| [Command entered:" + userCommand + "]");
             String feedback;
-            final String[] split = userCommand.trim().split("\\s+", 2);
+            final String[] split = splitCommand(userCommand);
             final String[] commandTypeAndParams = split.length == 2 ? split : new String[]{split[0], ""};
             final String commandType = commandTypeAndParams[0];
             final String commandArgs = commandTypeAndParams[1];
@@ -144,6 +143,19 @@ public class Contacts0 {
                 System.out.println("|| " + m);
             }
         }
+    }
+
+    private static String[] splitCommand(String userCommand) {
+        final String[] split = userCommand.trim().split("\\s+", 2);
+        return split;
+    }
+
+    private static void showWelcomeScreen() {
+        System.out.println("|| ===================================================");
+        System.out.println("|| ===================================================");
+        System.out.println("|| Contacts - Version 0.0");
+        System.out.println("|| Welcome to Contacts!");
+        System.out.println("|| ===================================================");
     }
 
 }
